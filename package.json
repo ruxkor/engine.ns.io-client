@@ -1,0 +1,14 @@
+{
+    "name": "engine.ns.io-client"
+  , "description": "client for engine.ns.io"
+  , "main": "./lib/engine.io.ns-client"
+  , "version": "0.1.0"
+  , "dependencies": {
+        "coffee-script": "*"
+      , "engine.io-client": "git://github.com/ruxkor/engine.io-client.git"
+      , "engine.ns.io-base": "git://github.com/ruxkor/engine.ns.io-base.git"
+    }
+  , "devDependencies": {
+      , "browserbuild": "*"
+    }
+}
