@@ -10,16 +10,16 @@ build-dist:
 	@make -C ./node_modules/engine.ns.io-base build
 	@./node_modules/.bin/browserbuild \
 		-g nsio \
-		-f lib/engine.ns.io.js \
-		-m engine.ns.io-client 
-		lib/
-	@# cd node_modules/engine.ns.io-base; ls lib/*.js 2>/dev/null && make clean
+		-f engine.ns.io.js \
+		-m engine.ns.io-client \
+		lib
+	@#cd node_modules/engine.ns.io-base; ls lib/*.js 2>/dev/null && make clean
 
 
 dist: build build-dist
 
 clean:
-	@find lib -name '*.coffee' | sed 's,coffee$$,js,' | xargs rm -f
+	@find lib -name '*.coffee' | sed 's,\.coffee$$,.js,' | xargs rm -f
 
 test:
 	@./node_modules/.bin/mocha \

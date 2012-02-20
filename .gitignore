@@ -1,7 +1,9 @@
-
 # node_modules
 node_modules
 
 # build artefacts
 build
 dist
+
+# all js files
+lib/*.js
