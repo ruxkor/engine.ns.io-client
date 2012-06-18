@@ -3,23 +3,11 @@ REPORTER = dot
 TESTS = $(find ./test -type f -name '*.js' ! -name 'common.js')
 
 build:
-	@find lib -name '*.coffee' | xargs coffee -c
-
-build-dist:
-	@# build base if not already built
-	@make -C ./node_modules/engine.ns.io-base build
-	@./node_modules/.bin/browserbuild \
-		-g nsio \
-		-f engine.ns.io.js \
-		-m engine.ns.io-client \
-		lib
-	@#cd node_modules/engine.ns.io-base; ls lib/*.js 2>/dev/null && make clean
-
-
-dist: build build-dist
+	@mkdir -p build
+	@browserify -e entry.coffee -p ifnodeify -o build/engine.ns.io-client.js
 
 clean:
-	@find lib -name '*.coffee' | sed 's,\.coffee$$,.js,' | xargs rm -f
+	@rm build -rf
 
 test:
 	@./node_modules/.bin/mocha \

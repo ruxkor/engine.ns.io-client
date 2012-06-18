@@ -9,6 +9,7 @@
       , "engine.ns.io-base": "git://github.com/ruxkor/engine.ns.io-base.git"
     }
   , "devDependencies": {
-        "browserbuild": "*"
+        "browserify": "*"
+      , "ifnodeify": "git://github.com/ruxkor/node-ifnodeify.git"
     }
 }
