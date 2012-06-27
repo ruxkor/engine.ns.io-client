@@ -7,7 +7,7 @@
         "coffee-script": "*"
       , "engine.io-client": "git://github.com/ruxkor/engine.io-client.git"
       , "engine.ns.io-base": "git://github.com/ruxkor/engine.ns.io-base.git"
-      , "debug": "*"
+      , "debug": "git://github.com/tuco86/debug.git"
     }
   , "devDependencies": {
         "browserify": "*"
